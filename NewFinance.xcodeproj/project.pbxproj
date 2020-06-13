@@ -3,27 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B27BE2122492F54400ED66B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2112492F54400ED66B4 /* AppDelegate.swift */; };
 		B27BE2142492F54400ED66B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2132492F54400ED66B4 /* SceneDelegate.swift */; };
-		B27BE2162492F54400ED66B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2152492F54400ED66B4 /* ViewController.swift */; };
+		B27BE2162492F54400ED66B4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2152492F54400ED66B4 /* FirstViewController.swift */; };
 		B27BE2192492F54400ED66B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27BE2172492F54400ED66B4 /* Main.storyboard */; };
 		B27BE21B2492F54500ED66B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27BE21A2492F54500ED66B4 /* Assets.xcassets */; };
 		B27BE21E2492F54500ED66B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27BE21C2492F54500ED66B4 /* LaunchScreen.storyboard */; };
+		B27BE2262493018C00ED66B4 /* IncomeStatementDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2252493018C00ED66B4 /* IncomeStatementDocument.swift */; };
+		B27BE2292493028C00ED66B4 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B27BE2282493028C00ED66B4 /* SwiftSoup */; };
+		B27BE22B24943CF100ED66B4 /* BalanceSheetDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE22A24943CF100ED66B4 /* BalanceSheetDocument.swift */; };
+		B27BE22D24943D2100ED66B4 /* CashFlowStatementDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE22C24943D2100ED66B4 /* CashFlowStatementDocument.swift */; };
+		B27BE22F24943D3F00ED66B4 /* CompanyProfileDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE22E24943D3F00ED66B4 /* CompanyProfileDocument.swift */; };
+		B27BE23124943DA300ED66B4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23024943DA300ED66B4 /* SecondViewController.swift */; };
+		B27BE23324943DB800ED66B4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23224943DB800ED66B4 /* ThirdViewController.swift */; };
+		B27BE23524943DCA00ED66B4 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23424943DCA00ED66B4 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B27BE20E2492F54400ED66B4 /* NewFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27BE2112492F54400ED66B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B27BE2132492F54400ED66B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B27BE2152492F54400ED66B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B27BE2152492F54400ED66B4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B27BE2182492F54400ED66B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B27BE21A2492F54500ED66B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B27BE21D2492F54500ED66B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B27BE21F2492F54500ED66B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B27BE2252493018C00ED66B4 /* IncomeStatementDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeStatementDocument.swift; sourceTree = "<group>"; };
+		B27BE22A24943CF100ED66B4 /* BalanceSheetDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceSheetDocument.swift; sourceTree = "<group>"; };
+		B27BE22C24943D2100ED66B4 /* CashFlowStatementDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowStatementDocument.swift; sourceTree = "<group>"; };
+		B27BE22E24943D3F00ED66B4 /* CompanyProfileDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileDocument.swift; sourceTree = "<group>"; };
+		B27BE23024943DA300ED66B4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B27BE23224943DB800ED66B4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		B27BE23424943DCA00ED66B4 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27BE2292493028C00ED66B4 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +74,14 @@
 			children = (
 				B27BE2112492F54400ED66B4 /* AppDelegate.swift */,
 				B27BE2132492F54400ED66B4 /* SceneDelegate.swift */,
-				B27BE2152492F54400ED66B4 /* ViewController.swift */,
+				B27BE2152492F54400ED66B4 /* FirstViewController.swift */,
+				B27BE23024943DA300ED66B4 /* SecondViewController.swift */,
+				B27BE23224943DB800ED66B4 /* ThirdViewController.swift */,
+				B27BE23424943DCA00ED66B4 /* FourthViewController.swift */,
+				B27BE2252493018C00ED66B4 /* IncomeStatementDocument.swift */,
+				B27BE22A24943CF100ED66B4 /* BalanceSheetDocument.swift */,
+				B27BE22C24943D2100ED66B4 /* CashFlowStatementDocument.swift */,
+				B27BE22E24943D3F00ED66B4 /* CompanyProfileDocument.swift */,
 				B27BE2172492F54400ED66B4 /* Main.storyboard */,
 				B27BE21A2492F54500ED66B4 /* Assets.xcassets */,
 				B27BE21C2492F54500ED66B4 /* LaunchScreen.storyboard */,
@@ -83,6 +106,9 @@
 			dependencies = (
 			);
 			name = NewFinance;
+			packageProductDependencies = (
+				B27BE2282493028C00ED66B4 /* SwiftSoup */,
+			);
 			productName = NewFinance;
 			productReference = B27BE20E2492F54400ED66B4 /* NewFinance.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +137,9 @@
 				Base,
 			);
 			mainGroup = B27BE2052492F54300ED66B4;
+			packageReferences = (
+				B27BE2272493028C00ED66B4 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = B27BE20F2492F54400ED66B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +167,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27BE2162492F54400ED66B4 /* ViewController.swift in Sources */,
+				B27BE23124943DA300ED66B4 /* SecondViewController.swift in Sources */,
+				B27BE23324943DB800ED66B4 /* ThirdViewController.swift in Sources */,
+				B27BE2162492F54400ED66B4 /* FirstViewController.swift in Sources */,
+				B27BE22F24943D3F00ED66B4 /* CompanyProfileDocument.swift in Sources */,
+				B27BE23524943DCA00ED66B4 /* FourthViewController.swift in Sources */,
 				B27BE2122492F54400ED66B4 /* AppDelegate.swift in Sources */,
+				B27BE2262493018C00ED66B4 /* IncomeStatementDocument.swift in Sources */,
+				B27BE22D24943D2100ED66B4 /* CashFlowStatementDocument.swift in Sources */,
+				B27BE22B24943CF100ED66B4 /* BalanceSheetDocument.swift in Sources */,
 				B27BE2142492F54400ED66B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B27BE2272493028C00ED66B4 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B27BE2282493028C00ED66B4 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27BE2272493028C00ED66B4 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B27BE2062492F54300ED66B4 /* Project object */;
 }
