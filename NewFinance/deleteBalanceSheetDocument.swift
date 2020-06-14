@@ -24,8 +24,8 @@ struct BalanceSheetDocument {
     
     func getAssets() -> String? {
         
-        guard let assetsElements: Elements = try? document.getElementsByAttributeValueContaining("data-reactid", "76") else {
-            print("Could not find element whose class contains \"76\"");
+        guard let assetsElements: Elements = try? document.getElementsByAttributeValueMatching("data-reactid", "^76$") else {
+            print("Could not find element whose class matches \"76\"");
             return nil;
         }
         

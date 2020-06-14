@@ -10,18 +10,16 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    var tickerSymbol: String? = nil;
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var marketCapLabel: UILabel!
     @IBOutlet weak var peRatioLabel: UILabel!
     @IBOutlet weak var epsLabel: UILabel!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender);
-    print("preparing to segue from \(type(of: segue.source)) to \(type(of: segue.destination))");
+    var tickerSymbol: String? = nil;
+    var financeDocument: FinanceDocument! = nil;
     
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,26 +31,14 @@ class FirstViewController: UIViewController {
         tickerSymbol = sender.text
         sender.resignFirstResponder();
         
-        let address: String = "https://finance.yahoo.com/quote/\(tickerSymbol!)";
+        financeDocument = FinanceDocument(tickerSymbol: tickerSymbol!)
         
-        
-        guard let url: URL = URL(string: address) else {
-            print("Could not create URL from address \"\(address)\".");
+        if financeDocument == nil {
+            print("Could not create instance of struct financeDocument.");
             return;
         }
         
-        guard let webPage: String = textFromURL(url: url) else {
-            print("Received nothing from URL \"\(url)\".");
-            return;
-            
-        }
-        
-        guard let incomeStatementDocument: IncomeStatementDocument = IncomeStatementDocument(webPage: webPage) else {
-            print("Could not create instance of struct IncomeStatementDocument.");
-            return;
-        }
-        
-        guard let nameText: String = incomeStatementDocument.getName() else {
+        guard let nameText: String = financeDocument.getName() else {
             print("The FinancialDocument had no name.");
             return;
         }
@@ -60,7 +46,7 @@ class FirstViewController: UIViewController {
         nameLabel.text = "The company name is \(nameText)"
         
         
-        guard let price: Double = incomeStatementDocument.getPrice() else {
+        guard let price: Double = financeDocument.getPrice() else {
             print("The FinancialDocument had no price.");
             return;
         }
@@ -68,21 +54,21 @@ class FirstViewController: UIViewController {
         priceLabel.text = String(format: "The current price of \(tickerSymbol!) stock is USD $%.2f", price);
         
         
-        guard let marketCapText: String = incomeStatementDocument.getMarketCap() else {
+        guard let marketCapText: String = financeDocument.getMarketCap() else {
             print("The FinancialDocument had no Market Cap.");
             return;
         }
         
         marketCapLabel.text = "The Market Capitalization of \(nameText) is \(marketCapText)"
         
-        guard let peRatioText: String = incomeStatementDocument.getPERatio() else {
+        guard let peRatioText: String = financeDocument.getPERatio() else {
             print("The FinancialDocument had no PE Ratio.");
             return;
         }
         
         peRatioLabel.text = "The PE Ratio of \(nameText) is \(peRatioText)"
         
-        guard let epsText: String = incomeStatementDocument.getEPS() else {
+        guard let epsText: String = financeDocument.getEPS() else {
             print("The FinancialDocument had no EPS.");
             return;
         }
@@ -91,10 +77,7 @@ class FirstViewController: UIViewController {
         
     }
     
-    
-    
 }
-
 
 
 func textFromURL(url: URL) -> String? {

@@ -86,7 +86,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Z0B-ka-7QO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="a7L-C8-qWf" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="a7L-C8-qWf" customClass="TabBarController" customModule="NewFinance" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JBD-if-6ZO">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -98,6 +98,7 @@
                         <segue destination="Fe3-0P-qgQ" kind="relationship" relationship="viewControllers" id="Tpw-2z-Pjv"/>
                         <segue destination="4gw-Y0-VZv" kind="relationship" relationship="viewControllers" id="hjk-cC-ehv"/>
                         <segue destination="r67-KE-g8U" kind="relationship" relationship="viewControllers" id="Gj0-qI-wMm"/>
+                        <segue destination="ywa-EJ-Gh6" kind="relationship" relationship="viewControllers" id="Fti-S8-oOO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzc-Fj-v5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,10 +169,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-rW-GKg">
-                                <rect key="frame" x="20" y="136" width="374" height="639"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-K7-pEQ">
+                                <rect key="frame" x="20" y="167" width="374" height="616"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="13"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwh-yF-39b">
+                                <rect key="frame" x="20" y="107" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -181,15 +190,32 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Company Profile" image="companyprofile" selectedImage="companyprofile" id="SrY-7g-Di3"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="Y2g-rW-GKg" id="4N2-ai-XCm"/>
+                        <outlet property="descriptionTextView" destination="zAX-K7-pEQ" id="psC-W6-ggI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdX-CE-taE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918.840579710145" y="760.71428571428567"/>
+            <point key="canvasLocation" x="1837.68115942029" y="760.71428571428567"/>
+        </scene>
+        <!--Wikipedia-->
+        <scene sceneID="rtl-9q-Lvs">
+            <objects>
+                <viewController id="ywa-EJ-Gh6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aKy-l5-8N2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8jv-Uh-Oik"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wikipedia" image="Wikipedia" selectedImage="Wikipedia" id="gca-Nd-5C5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPt-UQ-fVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2894" y="754"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Wikipedia" width="30" height="30"/>
         <image name="balancesheet" width="30" height="30"/>
         <image name="cashflowstatement" width="30" height="30"/>
         <image name="companyprofile" width="30" height="30"/>

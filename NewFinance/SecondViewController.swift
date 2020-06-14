@@ -10,35 +10,16 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var tickerSymbol: String? = nil;
-
     @IBOutlet weak var assetsLabel: UILabel!
+    
+    var financeDocument: FinanceDocument! = nil;
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //let address: String = "https://finance.yahoo.com/quote/IBM/key-statistics?p=\(tickerSymbol!)";
-        let address: String = "https://finance.yahoo.com/quote/IBM/balance-sheet?p=IBM";
         
         
-        guard let url: URL = URL(string: address) else {
-            print("Could not create URL from address \"\(address)\".");
-            return;
-        }
-        
-        guard let balanceSheetWebPage: String = textFromURL(url: url) else {
-            print("Received nothing from URL \"\(url)\".");
-            return;
-            
-        }
-        
-        guard let balanceSheetDocument: BalanceSheetDocument = BalanceSheetDocument(balanceSheetWebPage: balanceSheetWebPage) else {
-            print("Could not create instance of struct BalanceSheetDocument.");
-            return;
-        }
-        
-        guard let assetsText: String = balanceSheetDocument.getAssets() else {
+        guard let assetsText: String = financeDocument.getAssets() else {
             print("The BalanceSheetDocument had no Assets.");
             return;
         }
@@ -48,5 +29,65 @@ class SecondViewController: UIViewController {
         
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        assetsLabel.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        guard let assetsText: String = financeDocument.getAssets() else {
+            print("The BalanceSheetDocument had no Assets.");
+            return;
+        }
+        assetsLabel.text = "\(assetsText)"
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ 
+ //let address: String = "https://finance.yahoo.com/quote/IBM/key-statistics?p=\(tickerSymbol!)";
+ let address: String = "https://finance.yahoo.com/quote/IBM/balance-sheet?p=IBM";
+ 
+ 
+ guard let url: URL = URL(string: address) else {
+ print("Could not create URL from address \"\(address)\".");
+ return;
+ }
+ 
+ guard let balanceSheetWebPage: String = textFromURL(url: url) else {
+ print("Received nothing from URL \"\(url)\".");
+ return;
+ 
+ }
+ 
+ guard let balanceSheetDocument: BalanceSheetDocument = BalanceSheetDocument(balanceSheetWebPage: balanceSheetWebPage) else {
+ print("Could not create instance of struct BalanceSheetDocument.");
+ return;
+ }
+ */

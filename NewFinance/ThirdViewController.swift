@@ -6,21 +6,73 @@
 //  Copyright © 2020 Mario Perozo. All rights reserved.
 //
 
-
-
 import UIKit
 
 class ThirdViewController: UIViewController {
     
-    var tickerSymbol: String? = nil;
-    
     @IBOutlet weak var cashFlowLabel: UILabel!
+    
+    var financeDocument: FinanceDocument! = nil;
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let address: String = "https://finance.yahoo.com/quote/IBM/key-statistics?p=\(tickerSymbol!)";
+        
+        guard let cashFlowText: String = financeDocument.getCashFlow() else {
+            print("The FinancialDocument had no Cash Flow.");
+            return;
+        }
+        
+        cashFlowLabel.text = "Free cash flow is \(cashFlowText)"
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        cashFlowLabel.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        guard let cashFlowText: String = financeDocument.getCashFlow() else {
+            print("The FinancialDocument had no Cash Flow.");
+            return;
+        }
+        cashFlowLabel.text = "\(cashFlowText)"
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ 
+ //let address: String = "https://finance.yahoo.com/quote/IBM/key-statistics?p=\(tickerSymbol!)";
         let address: String = "https://finance.yahoo.com/quote/IBM/cash-flow?p=IBM";
         
         
@@ -39,17 +91,6 @@ class ThirdViewController: UIViewController {
             print("Could not create instance of struct CashFlowDocument.");
             return;
         }
-        
-        guard let cashFlowText: String = cashFlowStatementDocument.getCashFlow() else {
-            print("The FinancialDocument had no Cash Flow.");
-            return;
-        }
-        
-        cashFlowLabel.text = "Free cash flow is \(cashFlowText)"
-        
-        
-    }
-    
-    
-}
+ 
+ */
 
