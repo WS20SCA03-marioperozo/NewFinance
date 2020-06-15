@@ -43,7 +43,7 @@ class FirstViewController: UIViewController {
             return;
         }
         
-        nameLabel.text = "The company name is \(nameText)"
+        nameLabel.text = "\(nameText)"
         
         
         guard let price: Double = financeDocument.getPrice() else {
@@ -51,7 +51,7 @@ class FirstViewController: UIViewController {
             return;
         }
         
-        priceLabel.text = String(format: "The current price of \(tickerSymbol!) stock is USD $%.2f", price);
+        priceLabel.text = String(format: "USD $%.2f", price);
         
         
         guard let marketCapText: String = financeDocument.getMarketCap() else {
@@ -59,21 +59,21 @@ class FirstViewController: UIViewController {
             return;
         }
         
-        marketCapLabel.text = "The Market Capitalization of \(nameText) is \(marketCapText)"
+        marketCapLabel.text = "USD \(marketCapText)"
         
         guard let peRatioText: String = financeDocument.getPERatio() else {
             print("The FinancialDocument had no PE Ratio.");
             return;
         }
         
-        peRatioLabel.text = "The PE Ratio of \(nameText) is \(peRatioText)"
+        peRatioLabel.text = "\(peRatioText)"
         
         guard let epsText: String = financeDocument.getEPS() else {
             print("The FinancialDocument had no EPS.");
             return;
         }
         
-        epsLabel.text = "The EPS of \(nameText) is \(epsText)"
+        epsLabel.text = "\(epsText)"
         
     }
     
