@@ -23,9 +23,7 @@ class FifthViewController: UIViewController {
             return;
         }
         
-        print(nameText)
         companyName = "\(nameText)"
-        print(companyName);
         
         var urlComponents: URLComponents = URLComponents();
         urlComponents.scheme = "https";
@@ -40,6 +38,51 @@ class FifthViewController: UIViewController {
         present(safariViewController, animated: true);
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        guard let nameText: String = financeDocument.getName() else {
+            print("The FinancialDocument had no name.");
+            return;
+        }
+
+        companyName = "\(nameText)"
+
+        var urlComponents: URLComponents = URLComponents();
+        urlComponents.scheme = "https";
+        urlComponents.host = "en.wikipedia.org"; //English
+        urlComponents.path = "/wiki/\(companyName)";    //will change " " to "%20"
+
+        guard let url: URL = urlComponents.url else {
+            fatalError("could not create url for state \(companyName)");
+        }
+
+        let safariViewController: SFSafariViewController = SFSafariViewController(url: url);
+        present(safariViewController, animated: true);
+    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated);
+//
+//        guard let nameText: String = financeDocument.getName() else {
+//            print("The FinancialDocument had no name.");
+//            return;
+//        }
+//
+//        companyName = "\(nameText)"
+//
+//        var urlComponents: URLComponents = URLComponents();
+//        urlComponents.scheme = "https";
+//        urlComponents.host = "en.wikipedia.org"; //English
+//        urlComponents.path = "/wiki/\(companyName)";    //will change " " to "%20"
+//
+//        guard let url: URL = urlComponents.url else {
+//            fatalError("could not create url for state \(companyName)");
+//        }
+//
+//        let safariViewController: SFSafariViewController = SFSafariViewController(url: url);
+//        present(safariViewController, animated: true);
+//    }
     
 
 }

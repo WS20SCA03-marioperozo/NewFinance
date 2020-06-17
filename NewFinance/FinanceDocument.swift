@@ -202,29 +202,49 @@ struct FinanceDocument {
     }
     
     func getAssets() -> String? {
-        
-        guard let assetsElements: Elements = try? document2.getElementsByAttributeValueMatching("data-reactid", "^76$") else {
-            print("Could not find element whose class matches \"76\"");
+        guard let assetsElements: Elements = try? document2.getElementsByAttributeValue("data-reactid", "76") else {
+            print("Could not find element whose data-reactid attribute is \"76\".");
             return nil;
         }
-        
-        guard assetsElements.count == 1 else {
+
+        guard assetsElements.count > 0 else {
             print("assetsElements.count == \(assetsElements.count)");
             return nil;
         }
-        
-        guard let assetsText = try? assetsElements[0].text() else {
+
+        guard let assetsText = try? assetsElements.last!.text() else {
             print("The assets element had no text.");
             return nil;
         }
-        
-        return assetsText
+
+        return assetsText;
     }
+    
+    func showLiabilities() -> String? {
+        guard let liabilitiesElements: Elements = try? document2.getElementsByAttributeValue("data-reactid", "94") else {
+            print("Could not find element whose data-reactid attribute is \"76\".");
+            return nil;
+        }
+
+        guard liabilitiesElements.count > 0 else {
+            print("assetsElements.count == \(liabilitiesElements.count)");
+            return nil;
+        }
+
+        guard let liabilitiesText = try? liabilitiesElements.last!.text() else {
+            print("The assets element had no text.");
+            return nil;
+        }
+
+        return liabilitiesText;
+    }
+
+
     
     func getCashFlow() -> String? {
         
         guard let cashFlowElements: Elements = try? document3.getElementsByAttributeValueMatching("data-reactid", "^79$") else {
-            print("Could not find element whose class contains \"259\"");
+            print("Could not find element whose class contains \"79\"");
             return nil;
         }
         
@@ -239,6 +259,26 @@ struct FinanceDocument {
         }
         
         return cashFlowText
+    }
+    
+    func getInvestingCashFlow() -> String? {
+        
+        guard let investingCashFlowElements: Elements = try? document3.getElementsByAttributeValueMatching("data-reactid", "^99$") else {
+            print("Could not find element whose class contains \"99\"");
+            return nil;
+        }
+        
+        guard investingCashFlowElements.count == 1 else {
+            print("descriptionelements.count == \(investingCashFlowElements.count)");
+            return nil;
+        }
+        
+        guard let investingCashFlowText = try? investingCashFlowElements[0].text() else {
+            print("The description element had no text.");
+            return nil;
+        }
+        
+        return investingCashFlowText
     }
     
     func getDescription() -> String? {

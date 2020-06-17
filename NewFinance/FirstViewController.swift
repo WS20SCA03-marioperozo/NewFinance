@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var marketCapLabel: UILabel!
     @IBOutlet weak var peRatioLabel: UILabel!
     @IBOutlet weak var epsLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var tickerSymbol: String? = nil;
     var financeDocument: FinanceDocument! = nil;
@@ -31,11 +32,35 @@ class FirstViewController: UIViewController {
         tickerSymbol = sender.text
         sender.resignFirstResponder();
         
+        activityIndicator.isHidden = true
+        activityIndicator.startAnimating();
+        financeDocument = FinanceDocument(tickerSymbol: tickerSymbol!);
+        activityIndicator.stopAnimating();
+        
         financeDocument = FinanceDocument(tickerSymbol: tickerSymbol!)
         
         if financeDocument == nil {
             print("Could not create instance of struct financeDocument.");
             return;
+        }
+        
+        for viewController: UIViewController in tabBarController!.viewControllers!.dropFirst() {
+            var vc: UIViewController = viewController;
+            if let navigationController: UINavigationController = vc as? UINavigationController {
+                vc = navigationController.viewControllers[0];
+            }
+
+            if let secondViewController: SecondViewController = vc as? SecondViewController {
+                secondViewController.financeDocument = financeDocument;
+            } else if let thirdViewController: ThirdViewController = vc as? ThirdViewController {
+                thirdViewController.financeDocument = financeDocument;
+            } else if let fourthViewController: FourthViewController = vc as? FourthViewController {
+                fourthViewController.financeDocument = financeDocument;
+            } else if let fifthViewController: FifthViewController = vc as? FifthViewController {
+                fifthViewController.financeDocument = financeDocument;
+            } else {
+                print("unexpected type \(type(of: vc))");
+            }
         }
         
         guard let nameText: String = financeDocument.getName() else {
@@ -66,14 +91,14 @@ class FirstViewController: UIViewController {
             return;
         }
         
-        peRatioLabel.text = "\(peRatioText)"
+        peRatioLabel.text = "\(peRatioText) Years. Share price / EPS"
         
         guard let epsText: String = financeDocument.getEPS() else {
             print("The FinancialDocument had no EPS.");
             return;
         }
         
-        epsLabel.text = "\(epsText)"
+        epsLabel.text = "USD \(epsText)"
         
     }
     

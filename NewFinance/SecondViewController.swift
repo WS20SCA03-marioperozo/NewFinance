@@ -11,6 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var assetsLabel: UILabel!
+    @IBOutlet weak var liabilitiesLabel: UILabel!
     
     var financeDocument: FinanceDocument! = nil;
     
@@ -41,7 +42,13 @@ class SecondViewController: UIViewController {
             print("The BalanceSheetDocument had no Assets.");
             return;
         }
-        assetsLabel.text = "\(assetsText)"
+        assetsLabel.text = "USD \(assetsText)"
+        
+        guard let liabilitiesText: String = financeDocument.showLiabilities() else {
+            print("The BalanceSheetDocument had no Assets.");
+            return;
+        }
+        liabilitiesLabel.text = "USD \(liabilitiesText)"
     }
     
 }

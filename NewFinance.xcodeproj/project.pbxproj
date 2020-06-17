@@ -21,7 +21,7 @@
 		B27BE23124943DA300ED66B4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23024943DA300ED66B4 /* SecondViewController.swift */; };
 		B27BE23324943DB800ED66B4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23224943DB800ED66B4 /* ThirdViewController.swift */; };
 		B27BE23524943DCA00ED66B4 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE23424943DCA00ED66B4 /* FourthViewController.swift */; };
-		B27BE2A52495D23C00ED66B4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2A42495D23C00ED66B4 /* TabBarController.swift */; };
+		B27BE2A52495D23C00ED66B4 /* deleteTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2A42495D23C00ED66B4 /* deleteTabBarController.swift */; };
 		B27BE2A72496D2B400ED66B4 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27BE2A62496D2B400ED66B4 /* FifthViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		B27BE23024943DA300ED66B4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B27BE23224943DB800ED66B4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		B27BE23424943DCA00ED66B4 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		B27BE2A42495D23C00ED66B4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B27BE2A42495D23C00ED66B4 /* deleteTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteTabBarController.swift; sourceTree = "<group>"; };
 		B27BE2A62496D2B400ED66B4 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 				B27BE22A24943CF100ED66B4 /* deleteBalanceSheetDocument.swift */,
 				B27BE22C24943D2100ED66B4 /* deleteCashFlowStatementDocument.swift */,
 				B27BE22E24943D3F00ED66B4 /* deleteCompanyProfileDocument.swift */,
-				B27BE2A42495D23C00ED66B4 /* TabBarController.swift */,
+				B27BE2A42495D23C00ED66B4 /* deleteTabBarController.swift */,
 				B27BE2172492F54400ED66B4 /* Main.storyboard */,
 				B27BE21A2492F54500ED66B4 /* Assets.xcassets */,
 				B27BE21C2492F54500ED66B4 /* LaunchScreen.storyboard */,
@@ -176,7 +176,7 @@
 				B27BE2A72496D2B400ED66B4 /* FifthViewController.swift in Sources */,
 				B27BE23124943DA300ED66B4 /* SecondViewController.swift in Sources */,
 				B27BE23324943DB800ED66B4 /* ThirdViewController.swift in Sources */,
-				B27BE2A52495D23C00ED66B4 /* TabBarController.swift in Sources */,
+				B27BE2A52495D23C00ED66B4 /* deleteTabBarController.swift in Sources */,
 				B27BE2162492F54400ED66B4 /* FirstViewController.swift in Sources */,
 				B27BE22F24943D3F00ED66B4 /* deleteCompanyProfileDocument.swift in Sources */,
 				B27BE23524943DCA00ED66B4 /* FourthViewController.swift in Sources */,
